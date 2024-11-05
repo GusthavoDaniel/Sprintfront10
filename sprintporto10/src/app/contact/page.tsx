@@ -32,7 +32,7 @@ const ContactPage: React.FC = () => {
         <div className={styles.card}>
           
           <p className={styles.label}>E-mail:</p>
-          <p className={styles.text}>contato@mechanicassistance.com</p>
+          <p className={styles.text}>contato@assistance.com</p>
         </div>
         
         <div className={styles.card}>
