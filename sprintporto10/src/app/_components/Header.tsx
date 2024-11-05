@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <header className="bg-blue-500 py-3 px-6 flex items-center justify-between shadow-md font-sans text-base">
       <Link href="/" className="text-white font-semibold flex items-center space-x-2 hover:scale-105 transform transition-transform">
         {/* Logo Image */}
-        <Image src="/images/assistance.png" alt="Mechanic Assistance Logo" width={30} height={30} className="w-6 h-6" />
+        <Image src="/image/assistance.png" alt="Mechanic Assistance Logo" width={30} height={30} className="w-6 h-6" />
         <span>Mechanic Assistance</span>
       </Link>
 
