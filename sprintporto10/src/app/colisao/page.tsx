@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaCarCrash, FaExclamationTriangle } from 'react-icons/fa';
+import { FaCarCrash,} from 'react-icons/fa';
 
 const Colisao: React.FC = () => {
   const [userAddress, setUserAddress] = useState('');

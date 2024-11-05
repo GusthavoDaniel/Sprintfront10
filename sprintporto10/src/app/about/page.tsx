@@ -3,7 +3,6 @@
 "use client";
 
 import React from 'react';
-import { FaLightbulb, FaTools, FaHandshake } from 'react-icons/fa';
 
 const AboutPage: React.FC = () => {
   return (

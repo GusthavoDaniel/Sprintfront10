@@ -10,6 +10,8 @@ export default function Home() {
     <div> 
       
       <HomePage/>
+      <HomePage/>
+
       
       
     </div>
