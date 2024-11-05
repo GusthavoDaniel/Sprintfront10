@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 // Definindo as classes em um objeto para reutilização
 const styles = {

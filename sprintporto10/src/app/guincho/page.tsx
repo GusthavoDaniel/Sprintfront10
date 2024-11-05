@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaTruck, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaTruck} from 'react-icons/fa';
 
 const Guincho: React.FC = () => {
   const [nearbyGuincho, setNearbyGuincho] = useState('');
