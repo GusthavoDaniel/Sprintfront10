@@ -27,23 +27,23 @@ const Servicos: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center min-h-screen p-8 bg-gradient-to-br from-blue-500 to-cyan-500 text-white font-poppins">
-      <h2 className="text-4xl font-bold mb-10">Nossos Serviços</h2>
+    <div className="flex flex-col items-center min-h-screen p-6 bg-gradient-to-br from-blue-500 to-cyan-500 text-white font-poppins">
+      <h2 className="text-3xl font-bold mb-8">Nossos Serviços</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {services.map((service) => (
           <Link key={service.title} href={service.href} passHref>
-            <div className="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:scale-105 text-center cursor-pointer">
+            <div className="bg-white text-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 text-center cursor-pointer max-w-xs mx-auto">
               <Image 
                 src={service.image} 
                 alt={service.title} 
-                width={200} 
-                height={120} 
-                className="rounded-t-md mx-auto mb-4" 
+                width={160} 
+                height={90} 
+                className="rounded-t-md mx-auto mb-3" 
               />
-              <p className="text-sm text-gray-500 mb-1">Clique aqui para:</p> {/* Adicionando o texto "Clique aqui para:" */}
-              <h3 className="text-2xl font-semibold text-blue-700 mb-3">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <p className="text-xs text-gray-500 mb-1">Clique aqui para:</p> 
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">{service.title}</h3>
+              <p className="text-gray-600 text-sm">{service.description}</p>
             </div>
           </Link>
         ))}
