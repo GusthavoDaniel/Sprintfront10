@@ -1,4 +1,4 @@
-"use client"; // Habilita o uso de hooks do React
+"use client";
 
 import React, { useState } from 'react';
 
@@ -6,39 +6,36 @@ const Cadastro: React.FC = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
-    senha: '',
-    confirmarSenha: '',
+    password: '',
+    confirmPassword: '',
+    phone: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
   });
-
-  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
-
-    if (formData.senha !== formData.confirmarSenha) {
-      setError('As senhas não coincidem');
+    if (formData.password !== formData.confirmPassword) {
+      alert("As senhas não coincidem!");
       return;
     }
-
-    alert(`Cadastro realizado com sucesso para o usuário: ${formData.username}`);
-    // Aqui você pode adicionar a lógica de envio do formulário, como chamar uma API
+    // Lógica para enviar o formulário
+    alert("Cadastro realizado com sucesso!");
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-500 to-cyan-500 font-poppins p-6 text-white">
-      <div className="bg-white text-gray-800 p-8 rounded-xl shadow-lg max-w-lg w-full text-center transform transition-transform hover:scale-105">
-        <h2 className="text-3xl font-bold text-blue-500 mb-6">Cadastro de Usuário</h2>
-        <p className="text-lg mb-6">
-          Insira suas informações para criar uma nova conta.
-        </p>
-
-        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-sky-400 to-blue-600 font-poppins">
+      <div className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full text-center">
+        <h2 className="text-3xl font-bold text-blue-500 mb-4">Cadastro de Usuário</h2>
+        <p className="text-gray-600 mb-6">Insira suas informações para criar uma nova conta.</p>
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="username"
@@ -46,7 +43,7 @@ const Cadastro: React.FC = () => {
             value={formData.username}
             onChange={handleChange}
             required
-            className="w-full max-w-md p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           />
           <input
             type="email"
@@ -55,32 +52,74 @@ const Cadastro: React.FC = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full max-w-md p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           />
           <input
             type="password"
-            name="senha"
+            name="password"
             placeholder="Senha"
-            value={formData.senha}
+            value={formData.password}
             onChange={handleChange}
             required
-            className="w-full max-w-md p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           />
           <input
             type="password"
-            name="confirmarSenha"
+            name="confirmPassword"
             placeholder="Confirme a Senha"
-            value={formData.confirmarSenha}
+            value={formData.confirmPassword}
             onChange={handleChange}
             required
-            className="w-full max-w-md p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           />
-
-          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Telefone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          />
+          <input
+            type="text"
+            name="address"
+            placeholder="Endereço"
+            value={formData.address}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          />
+          <input
+            type="text"
+            name="city"
+            placeholder="Cidade"
+            value={formData.city}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          />
+          <input
+            type="text"
+            name="state"
+            placeholder="Estado"
+            value={formData.state}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          />
+          <input
+            type="text"
+            name="zip"
+            placeholder="CEP"
+            value={formData.zip}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          />
           <button
             type="submit"
-            className="w-full max-w-md py-3 bg-blue-500 text-white font-bold rounded-md shadow-lg hover:bg-blue-600 transform transition-transform duration-200 active:scale-95"
+            className="w-full py-3 bg-blue-500 text-white font-bold rounded-md shadow-md hover:bg-blue-600 transition-transform transform hover:scale-105"
           >
             Cadastrar
           </button>
